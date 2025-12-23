@@ -20,25 +20,27 @@
                   linear-gradient(180deg,#021027 0%, #071428 60%), var(--bg);
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
       line-height:1.5;
+      display: flex; justify-content: center; align-items: center; /* Center the entire page vertically and horizontally */
+      min-height: 100vh;
     }
-    .wrap{max-width:var(--maxw); margin:36px auto; padding:28px; border-radius:14px; background:linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.01)); box-shadow:0 10px 30px rgba(2,6,23,0.6)}
-    header{display:flex; gap:22px; align-items:center}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:28px; border-radius:14px; background:linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.01)); box-shadow:0 10px 30px rgba(2,6,23,0.6); width: 100%; text-align: center;} /* Improved centering and full width */
+    header{display:flex; gap:22px; align-items:center; justify-content: center; flex-direction: column; text-align: center;} /* Center header elements */
     .avatar{width:110px;height:110px;border-radius:16px;object-fit:cover;border:2px solid rgba(255,255,255,0.04); background:linear-gradient(135deg,var(--accent),var(--accent-2)); padding:3px}
-    h1{margin:0;font-size:28px;letter-spacing:-0.2px}
+    h1{margin:0;font-size:28px;letter-spacing:-0.2px; text-align: center;}
     h1 small{display:block;color:var(--muted);font-weight:600;font-size:14px}
-    .lead{color:var(--muted);margin-top:8px;max-width:66ch}
-    .cta-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .lead{color:var(--muted);margin-top:8px;max-width:66ch; text-align: center; margin-left: auto; margin-right: auto;} /* Center lead text */
+    .cta-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap; justify-content: center;} /* Center CTA buttons */
     .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#042433;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 6px 18px rgba(35,80,140,0.08)}
     .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent-2);padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:600}
-    main.grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px}
-    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .proj{background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent);border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,0.02)}
+    main.grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px; justify-items: center;} /* Center grid items */
+    .card{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02); text-align: center;} /* Center card content */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px; justify-items: center;}
+    .proj{background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent);border-radius:10px;padding:12px;border:1px solid rgba(255,255,255,0.02); text-align: center;}
     .proj h3{margin:0;font-size:15px}
     .proj p{margin:8px 0 0 0;color:var(--muted);font-size:13px}
-    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px; justify-content: center;} /* Center skills */
     .skill{padding:6px 10px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));font-size:13px;color:var(--muted)}
-    aside .meta-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    aside .meta-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap; justify-content: center;}
     .stat{background:var(--glass);padding:10px;border-radius:10px;min-width:100px;text-align:center}
     .muted{color:var(--muted);font-size:13px}
     footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
@@ -46,6 +48,7 @@
       main.grid{grid-template-columns:1fr; padding-top:10px}
       .projects{grid-template-columns:1fr}
       .avatar{width:88px;height:88px}
+      header{flex-direction: column; align-items: center;}
     }
     /* small interactive touches */
     a:hover{opacity:0.95}
@@ -72,11 +75,28 @@
     <main class="grid" style="align-items:start">
       <section>
         <div class="card">
-          
+          <h2 style="margin:0 0 8px 0">Featured Projects</h2>
+          <div class="projects">
+            <div class="proj">
+              <h3>E-Commerce Platform</h3>
+              <p>Full-stack web app with React, Node.js, and Postgres. Features user auth, payment integration, and admin dashboard.</p>
+            </div>
+            <div class="proj">
+              <h3>Mobile Task Manager</h3>
+              <p>React Native app for productivity. Includes offline sync, notifications, and cross-platform support.</p>
+            </div>
+            <div class="proj">
+              <h3>API Gateway Service</h3>
+              <p>Go-based microservice for API management. Handles routing, rate limiting, and logging with Kubernetes deployment.</p>
+            </div>
+            <div class="proj">
+              <h3>Data Visualization Dashboard</h3>
+              <p>TypeScript dashboard using D3.js. Real-time data from APIs, responsive design, and export features.</p>
+            </div>
           </div>
         </div>
 
-        <div class="card" style="margin-top:14px"><center>
+        <div class="card" style="margin-top:14px">
           <h2 style="margin:0 0 8px 0">About my approach</h2>
           <p class="muted">Product-driven: I translate product needs into measurable technical plans. I prioritize observability, strong test coverage, and incremental delivery so teams can move quickly and safely.</p>
 
@@ -103,7 +123,7 @@
           <div class="meta-row" style="margin-bottom:10px">
             <div style="flex:1">
               <div class="muted">Email</div>
-              <div style="display:flex;gap:8px;align-items:center;margin-top:6px">
+              <div style="display:flex;gap:8px;align-items:center;margin-top:6px; justify-content: center;">
                 <div class="copy" id="email">peterisongo18@gmail.com</div>
                 <button class="btn-ghost" id="copyBtn">Copy</button>
               </div>
@@ -112,7 +132,7 @@
 
           <div style="margin-top:10px">
             <div class="muted">Profiles</div>
-            <div style="margin-top:8px;display:flex;flex-direction:column;gap:8px">
+            <div style="margin-top:8px;display:flex;flex-direction:column;gap:8px; align-items: center;">
               <a class="badge-ghost" href="https://github.com/Petresonko1" target="_blank" rel="noopener">GitHub</a>
               <a class="badge-ghost" href="https://www.linkedin.com/in/peterisongo" target="_blank" rel="noopener">LinkedIn</a>
               <a class="badge-ghost" href="https://peterisongo16.wixsite.com/peterisongoportfolio" target="_blank" rel="noopener">Portfolio</a>
@@ -121,7 +141,7 @@
 
           <div style="margin-top:12px">
             <div class="muted">Availability</div>
-            <div style="margin-top:8px;color:var(--accent);font-weight:700">Open to collaborations & contract work</div>
+            <div style="margin-top:8px;color:var(--accent);font-weight:700; text-align: center;">Open to collaborations & contract work</div>
           </div>
         </div>
 
@@ -134,7 +154,7 @@
           <div style="margin-top:12px;font-size:13px;color:var(--muted)">Want a custom software, mobile app or website? <a href="mailto:peterisongo18@gmail.com" style="color:var(--accent-2)">Email me</a></div>
         </div>
       </aside>
-    </main></center>
+    </main>
     <footer>
       <div style="margin-top:18px">Made with care • © <span id="year"></span> Petre Isongo • <a href="https://github.com/Petresonko1" style="color:var(--muted)">github.com/Petresonko1</a></div>
     </footer>
