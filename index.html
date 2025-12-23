@@ -24,12 +24,12 @@
       min-height: 100vh;
     }
     .wrap{max-width:var(--maxw); margin:0 auto; padding:28px; border-radius:14px; background:linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.01)); box-shadow:0 10px 30px rgba(2,6,23,0.6); width: 100%; text-align: center;} /* Improved centering and full width */
-    header{display:flex; gap:22px; align-items:center; justify-content: center; flex-direction: column; text-align: center;} /* Center header elements */
-    .avatar{width:110px;height:110px;border-radius:16px;object-fit:cover;border:2px solid rgba(255,255,255,0.04); background:linear-gradient(135deg,var(--accent),var(--accent-2)); padding:3px}
-    h1{margin:0;font-size:28px;letter-spacing:-0.2px; text-align: center;}
+    header{display:flex; gap:22px; align-items:flex-start; justify-content: center; flex-direction: row; text-align: left;} /* Reorganized to row layout, avatar beside text, adjusted alignment */
+    .avatar{width:120px;height:120px;border-radius:16px;object-fit:cover;object-position:center;border:2px solid rgba(255,255,255,0.04); background:linear-gradient(135deg,var(--accent),var(--accent-2)); padding:3px} /* Increased size and ensured centering to avoid top cropping */
+    h1{margin:0;font-size:28px;letter-spacing:-0.2px;}
     h1 small{display:block;color:var(--muted);font-weight:600;font-size:14px}
-    .lead{color:var(--muted);margin-top:8px;max-width:66ch; text-align: center; margin-left: auto; margin-right: auto;} /* Center lead text */
-    .cta-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap; justify-content: center;} /* Center CTA buttons */
+    .lead{color:var(--muted);margin-top:8px;max-width:66ch;} /* Removed auto margins for left alignment */
+    .cta-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;} /* Removed center justify for left alignment */
     .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#042433;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 6px 18px rgba(35,80,140,0.08)}
     .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent-2);padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:600}
     main.grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px; justify-items: center;} /* Center grid items */
@@ -48,7 +48,9 @@
       main.grid{grid-template-columns:1fr; padding-top:10px}
       .projects{grid-template-columns:1fr}
       .avatar{width:88px;height:88px}
-      header{flex-direction: column; align-items: center;}
+      header{flex-direction: column; align-items: center; text-align: center;} /* Stack on mobile and center */
+      .lead{text-align: center; margin-left: auto; margin-right: auto;}
+      .cta-row{justify-content: center;}
     }
     /* small interactive touches */
     a:hover{opacity:0.95}
@@ -78,20 +80,20 @@
           <h2 style="margin:0 0 8px 0">Featured Projects</h2>
           <div class="projects">
             <div class="proj">
-              <h3>E-Commerce Platform</h3>
-              <p>Full-stack web app with React, Node.js, and Postgres. Features user auth, payment integration, and admin dashboard.</p>
+              <h3>Mobile Apps</h3>
+              <p>Cross-platform mobile applications built with React Native and Flutter, featuring offline capabilities, push notifications, and seamless user experiences.</p>
             </div>
             <div class="proj">
-              <h3>Mobile Task Manager</h3>
-              <p>React Native app for productivity. Includes offline sync, notifications, and cross-platform support.</p>
+              <h3>E-commerce Systems</h3>
+              <p>Full-stack e-commerce platforms with secure payment gateways, inventory management, and admin dashboards for scalable online stores.</p>
             </div>
             <div class="proj">
-              <h3>API Gateway Service</h3>
-              <p>Go-based microservice for API management. Handles routing, rate limiting, and logging with Kubernetes deployment.</p>
+              <h3>Management Systems</h3>
+              <p>Custom business management software including CRM, ERP, and workflow automation tools to streamline operations and improve efficiency.</p>
             </div>
             <div class="proj">
-              <h3>Data Visualization Dashboard</h3>
-              <p>TypeScript dashboard using D3.js. Real-time data from APIs, responsive design, and export features.</p>
+              <h3>Web Applications</h3>
+              <p>Responsive web apps using modern frameworks like React and Vue.js, integrated with APIs for dynamic data handling and real-time features.</p>
             </div>
           </div>
         </div>
