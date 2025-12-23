@@ -25,8 +25,8 @@
     }
     .wrap{max-width:var(--maxw); margin:0 auto; padding:28px; border-radius:14px; background:linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.01)); box-shadow:0 10px 30px rgba(2,6,23,0.6); width: 100%; text-align: center;} /* Improved centering and full width */
     header{display:flex; gap:22px; align-items:flex-start; justify-content: center; flex-direction: row; text-align: left;} /* Reorganized to row layout, avatar beside text, adjusted alignment */
-    .avatar{width:160px;height:160px;border-radius:16px;object-fit:contain;object-position:center;border:2px solid rgba(255,255,255,0.04); background:linear-gradient(135deg,var(--accent),var(--accent-2)); padding:3px} /* Increased size to 160x160 for a fuller display of the image */
-    h1{margin:0;font-size:28px;letter-spacing:-0.2px;}
+    .avatar{width:100px;height:100px;border-radius:16px;object-fit:contain;object-position:center;border:2px solid rgba(255,255,255,0.04); background:linear-gradient(135deg,var(--accent),var(--accent-2)); padding:3px} /* Reduced size to 100x100 for a smaller, fitting avatar */
+    h1{margin:0;font-size:32px;letter-spacing:-0.2px;} /* Increased font size for bigger name display */
     h1 small{display:block;color:var(--muted);font-weight:600;font-size:14px}
     .lead{color:var(--muted);margin-top:8px;max-width:66ch;} /* Removed auto margins for left alignment */
     .cta-row{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;} /* Removed center justify for left alignment */
@@ -47,7 +47,7 @@
     @media(max-width:920px){
       main.grid{grid-template-columns:1fr; padding-top:10px}
       .projects{grid-template-columns:1fr}
-      .avatar{width:120px;height:120px} /* Adjusted mobile size to 120x120 for better fit */
+      .avatar{width:80px;height:80px} /* Adjusted mobile size to 80x80 for better fit */
       header{flex-direction: column; align-items: center; text-align: center;} /* Stack on mobile and center */
       .lead{text-align: center; margin-left: auto; margin-right: auto;}
       .cta-row{justify-content: center;}
@@ -60,7 +60,7 @@
 </head>
 <body>
   <div class="wrap">
-    <header><br><br><br><br>
+    <header>
       <img class="avatar" src="https://avatars.githubusercontent.com/Petresonko1" alt="avatar">
       <div style="flex:1">
         <h1>Petre Isongo <small>@Petresonko1 — Software Engineer</small></h1>
